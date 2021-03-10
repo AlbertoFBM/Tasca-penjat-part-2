@@ -16,6 +16,26 @@ public class Puntuacio {
     private final String[] paraules3 = {"escombraries","escopinyes","engronxador","desnonament","malhauradament","malbaratament",};
     private final String[] letresBonus = {"x", "h", "y"};
 
+    public String getParaula() {
+        return paraula;
+    }
+
+    public void setParaula(String paraula) {
+        this.paraula = paraula;
+    }
+
+    public String[] getParaules1() {
+        return paraules1;
+    }
+
+    public String[] getParaules2() {
+        return paraules2;
+    }
+
+    public String[] getParaules3() {
+        return paraules3;
+    }
+
     public int getIntents() {
 
         return intents;
