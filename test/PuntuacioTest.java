@@ -3,7 +3,6 @@ package test;
 import com.jaume.penjat.Puntuacio;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -12,6 +11,10 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * @author Alberto Serrano
+ * @since  1.0
+ */
 public class PuntuacioTest {
 
     private Puntuacio puntuacio;
@@ -20,6 +23,10 @@ public class PuntuacioTest {
     /*
     Amb @BeforeEach, el mètode reiniciarPuntuacio() s'executa abans
     de cada @Test, @RepeatedTest, @ParameterizedTest i @TestFactory
+     */
+
+    /**
+     * reinicia la Puntuacio
      */
     @BeforeEach
     void reiniciarPuntuacio(){
@@ -31,6 +38,11 @@ public class PuntuacioTest {
     @DisplayName serveix per donar-li un nom descriptiu al mètode.
     @ParameterizedTest serveix per fer una prova parametritzada. S'utilitza
     amb @ValueSource per donar-li valors.
+     */
+
+    /**
+     *
+     * @param dificultat
      */
     @DisplayName("Dificultat del penjat")
     @ParameterizedTest
@@ -62,6 +74,11 @@ public class PuntuacioTest {
     /*
     @Test indica que el mètode és un mètode de prova
      */
+
+    /**
+     *
+     * @param dificultat
+     */
     @DisplayName("Calcular la puntació")
     @ParameterizedTest
     @ValueSource(ints = {1,2,3})
@@ -82,6 +99,10 @@ public class PuntuacioTest {
         }
     }
 
+    /**
+     *
+     * @param dificultat
+     */
     @ParameterizedTest
     @ValueSource(ints = {1,2,3})
     void testPuntuacioSi(int dificultat){
@@ -106,6 +127,11 @@ public class PuntuacioTest {
         assertEquals(puntuacioSi, puntuacio.calcularPuntuacio(paraulaSecreta, 1));
     }
 
+    /**
+     *
+     * @param dificultat
+     * @throws InterruptedException
+     */
     @ParameterizedTest
     @ValueSource(ints = {1,2,3})
     void testPuntuacioSiTemps(int dificultat) throws InterruptedException {
@@ -131,6 +157,10 @@ public class PuntuacioTest {
         assertEquals(puntuacioTemps, puntuacio.calcularPuntuacio(paraulaSecreta, 1));
     }
 
+    /**
+     *
+     * @param dificultat
+     */
     @ParameterizedTest
     @ValueSource(ints = {1,2,3})
     void testPuntuacioNo(int dificultat){
@@ -155,6 +185,10 @@ public class PuntuacioTest {
         assertEquals(puntuacioNo, puntuacio.calcularPuntuacio(paraulaSecreta, 1));
     }
 
+    /**
+     *
+     * @param dificultat
+     */
     @ParameterizedTest
     @ValueSource(ints = {1,2,3})
     void testNingunaAccertada(int dificultat){
@@ -165,6 +199,10 @@ public class PuntuacioTest {
         assertEquals(ningunaPuntuacio, puntuacio.calcularPuntuacio(paraulaSecreta, 1));
     }
 
+    /**
+     *
+     * @param dificultat
+     */
     @ParameterizedTest
     @ValueSource(ints = {1,2,3})
     void testPuntuacioExtra(int dificultat){

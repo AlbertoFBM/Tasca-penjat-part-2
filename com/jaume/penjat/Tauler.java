@@ -1,6 +1,11 @@
 package com.jaume.penjat;
 
+/**
+ * @author Alberto Serrano
+ * @since  1.0
+ */
 public class Tauler {
+
     private char[] paraulaSecreta;
     private String[] palabraEndevinada;
     private int intents;
@@ -45,6 +50,11 @@ public class Tauler {
         totalIntents = 0;
     }
 
+    /**
+     *
+     * @param p
+     * @param i
+     */
     public void inicialitzarPartida(String p, int i){
         paraulaSecreta = new char[p.length()];
         for (int n = 0; n < p.length(); n++) {
@@ -61,6 +71,10 @@ public class Tauler {
 
     }
 
+    /**
+     *
+     * @return string
+     */
     public String imprimir() {
         String result = "";
         for (int i = 0; i < palabraEndevinada.length; i++) {
@@ -75,6 +89,11 @@ public class Tauler {
         return result;
     }
 
+    /**
+     *
+     * @param letra
+     * @return string
+     */
     public String verificar(String letra) {
         if(letra.length() > 1){
             return "Lletra incorrecte";
@@ -93,16 +112,27 @@ public class Tauler {
         return"";
     }
 
+    /**
+     *
+     * @return string
+     */
     public String imprimirVides(){
         String message = String.format("Et queden %s vides de %s",intents, totalIntents);
         if(intents == 1) message = String.format("Et queda %s vida de %s",intents, totalIntents);
         return message;
     }
 
+    /**
+     * intents--
+     */
     public void restarIntent() {
         this.intents--;
     }
 
+    /**
+     *
+     * @return boolean
+     */
     public boolean hasGuanyat() {
         boolean valor = true;
         for (int i = 0; i < palabraEndevinada.length; i++) {

@@ -8,10 +8,17 @@ import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
+/**
+ * @author Alberto Serrano
+ * @since  1.0
+ */
 public class Util {
 
-
+    /**
+     *
+     * @param enunciat
+     * @return string
+     */
     public static String makeQuestion(String enunciat){
         String valor = " ";
         try {
@@ -25,6 +32,11 @@ public class Util {
         return valor;
         }
 
+    /**
+     *
+     * @param cadena
+     * @return boolean
+     */
     public static boolean isNumeric(String cadena){
         try {
             Integer.parseInt(cadena);

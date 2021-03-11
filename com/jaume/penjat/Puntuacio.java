@@ -3,8 +3,11 @@ package com.jaume.penjat;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * @author Alberto Serrano
+ * @since  1.0
+ */
 public class Puntuacio {
-
 
     private String paraula = "";
     private int dificultat = 0;
@@ -46,6 +49,11 @@ public class Puntuacio {
         return temps;
     }
 
+    /**
+     *
+     * @param dificultat
+     * @return String
+     */
     public String getParaulaSecretaDificultat(int dificultat){
         paraula = "err";
         this.dificultat = dificultat;
@@ -66,6 +74,12 @@ public class Puntuacio {
         return paraula;
     }
 
+    /**
+     *
+     * @param palabraEdivinada
+     * @param vides
+     * @return
+     */
     public float calcularPuntuacio(String[] palabraEdivinada, int vides){
         float puntuacio = 0;
         float percentatge = 0f;
@@ -109,6 +123,12 @@ public class Puntuacio {
         return puntuacio;
     }
 
+    /**
+     *
+     * @param inputStr
+     * @param items
+     * @return Array
+     */
     private boolean stringContainsItemFromList(String inputStr, String[] items) {
         return Arrays.stream(items).anyMatch(inputStr::contains);
     }
